@@ -1,0 +1,72 @@
+<ng-container *ngFor="let playerHeader of mapPlayerToHeaders">
+    <ng-container *ngIf="playerHeader.name===player.name">
+        <a class="list-group-item header-bg" [style.background-image]="'url(assets/images/headers/' + playerHeader.image+ ')'">
+            <h4 class="list-group-item-heading custom-group-item-heading">
+                <ng-container *ngFor="let icon of classIcons">
+                    <ng-container *ngIf="player.class===icon.id">
+                        <img class="icon-image-half" [src]="'assets/images/classes/' + icon.image" /> {{player.name}} |
+                        <ng-container *ngFor="let class of classes">
+                            <ng-container *ngFor="let race of races">
+                                <ng-container *ngFor="let classColor of classColors">
+                                <ng-container *ngIf="player.class===class.id && player.race===race.id && player.class===classColor.id">
+                                    <span class="smaller-font-race-class" [style.color]="classColor.color">{{race.name}} {{class.name}}</span>
+                                </ng-container>
+                            </ng-container>
+                            </ng-container>
+                        </ng-container>
+                    </ng-container>
+                </ng-container>
+            </h4>
+            <span class="smaller-font-level-realm">
+                <b>Level</b>: {{player.level}} | <b>Realm:</b> {{player.realm}}
+            </span>
+            <div>
+                <nav class="navbar navbar-expand-lg navbar-dark">
+                    <div class="collapse navbar-collapse" id="navbarColor01">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Items</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">PvP</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Quests</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Progression</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+            <!--
+<a routerLink="" class="list-group-item"> 
+    <h4 class="list-group-item-heading header-bg">
+        <span *ngFor="let icon of classIcons">
+            <span *ngIf="player.class===icon.id">
+                <img class="icon-image-half" [src]="icon.image"/>
+            </span>
+        </span>
+        {{player.name}}
+    </h4>
+    <div class="col-xs-18 col-sm-3">      
+    </div>
+</a>
+<a class="list-group-item">
+    <p class="list-group-item-text">
+        <b>Level:</b> {{player.level}}
+
+        <span *ngFor="let class of classes">
+                <span *ngIf="class.id===player.class">
+                    <b>Class: </b>{{class.name}}
+                </span>
+        </span>
+        <b>Server:</b> {{player.realm}} 
+    </p>
+</a>
+-->
+</a>
+    </ng-container>
+</ng-container>
