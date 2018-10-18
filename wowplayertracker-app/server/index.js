@@ -17,9 +17,6 @@ app.use(cors());
 app.use('/api/v1/players',playerRoutes); 
 
 
-
-
-
 const PORT = process.env.PORT || 3001; 
 app.listen(3001,function(){
     console.log('server is running'); 

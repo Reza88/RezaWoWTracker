@@ -1,9 +1,14 @@
 import {Injectable} from '@angular/core'; 
 import { Http,Response} from '@angular/http';
 
-import {Observable} from 'rxjs'; 
+
 import {Player} from './player.model';
 import { PlayerProfile } from './playerprofile.model';
+
+import { playerConfig } from './player.config';
+
+
+import {Observable} from 'rxjs'; 
 import { map, flatMap } from 'rxjs/operators';
 import 'rxjs/add/operator/mergeMap';
 
@@ -15,26 +20,28 @@ export class PlayerService{
         
     }
 
-     public getAllPlayerProfiles():Observable<Player[]>{
+     public getPlayerRanksAndRoles(id:number):Observable<any>{
         return this.http
-        .get('http://localhost:3001/api/v1/players')
+        .get(`http://localhost:3001/api/v1/players/${id}`)
         .pipe(map(res=>{
             return res.json().map(item=>{
                 return new Player(
                     item.name, 
-                    item.server
+                    item.server, 
+                    item.role, 
+                    item.rank
                 )
             });
         }));
     } 
 
     getAllPlayerProfilesStats():Observable<any>{
-        return  this.http.get('http://localhost:3001/api/v1/players')
+        return this.http.get('http://localhost:3001/api/v1/players')
         .flatMap((res:Response)=> res.json())
         .flatMap((player:Player)=>
              this.http.get(`https://us.api.battle.net/wow/character/
             ${player.server}/
-            ${player.name}?locale=en_US&apikey=kd9qpxf7u2dabsjwhrnkdskmr57ec3y2`))
+            ${player.name}?locale=en_US&apikey=${playerConfig.key}`))
             .pipe(map(res=>{
                 return new PlayerProfile({
                     lastModified:res.json().lastModified,
@@ -49,10 +56,10 @@ export class PlayerService{
                     thumbnail:res.json().thumbnail, 
                     calcClass:res.json().calcClass,
                     faction:res.json().faction, 
-                    totalHonorableKills:res.json().totalHonorableKills
+                    totalHonorableKills:res.json().totalHonorableKills,
                 });
-            }))
-    }
+            }));
+        }
 
     
 

@@ -1,36 +1,56 @@
 @import 'variables.scss';
 .navbar {
     padding: 20px;
-  
+
+    .custom-alignment{
+      margin: 0 auto;
+      display: block;
+    }
+
+
     .wpt-search {
-      height: 50px;
+     height: 50px;
       width: 300px;
     }
-  
+   
   
     .navbar-brand {
       margin-right: 30px;
       font-size: 30px;
       letter-spacing: 1px;
-      color:red;
+      color:black;
       font-weight: 500;
+      margin:0 right; 
     }
   
   
-    .nav-item {
-      font-size: 14px;
+    .nav-item .nav-link {
+      font-size: 15px;
+      color:white;
+      margin-top:80px;
+      -webkit-box-shadow: 0 8px 6px -6px greenyellow;
+      -moz-box-shadow: 0 8px 6px -6px greenyellow;
+      box-shadow: 0 8px 6px -6px greenyellow;
+
     }
   
     .btn-wpt-search {
-      border-color: $main-color;
-      color: $main-color;
+      border-color: black;
+      color: black;
   
   
       &:hover, &:focus, &:active {
         background-color: transparent;
-        border-color: $main-color !important;
-        color: $main-color !important;
+        border-color: red;
+        color: red !important;
         box-shadow: none;
       }
     }
   }
+
+.navbar-custom{
+  background-image:url('/assets/images/background/gs.png');
+  background-position:center; 
+  height:145px;
+  
+}

@@ -10,6 +10,8 @@ import { PlayerListItemComponent } from './player-list-item/player-list-item.com
 import { PlayerListComponent } from './player-list/player-list.component';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
 import { PlayerComponent } from './player.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+
 
 import {PlayerService} from './shared/player.service'; 
 const routes :Routes = [ 
@@ -31,7 +33,8 @@ const routes :Routes = [
     imports:[
         CommonModule,
         RouterModule.forChild(routes),
-        HttpModule
+        HttpModule,
+        NgxPaginationModule
     ], 
     providers:[
         PlayerService

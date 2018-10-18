@@ -1,0 +1,120 @@
+<div *ngFor="let info of playerInfo" class="container emp-profile">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="profile-img">
+                <img src="/assets/images/profiles/Arikin.jpg"
+                    alt="" />
+
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="profile-head">
+                <h5>{{info.name}}</h5>
+                <h6>Lead Developer</h6>
+                <p class="profile-rating">Rank: <span>{{info.rank}}</span><br>Role: <span>{{info.role}}</span></p>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item profile-custom-tabs">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                            aria-controls="home" aria-selected="true">General</a>
+                    </li>
+                    <li class="nav-item profile-custom-tabs">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="/players/{{info.name}}/pvp" role="tab" aria-controls="profile"
+                            aria-selected="false">PvP</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        
+        <div class="col-md-4">
+            <!--
+            <div class="profile-work">
+                <p>Social Media</p>
+                <i class="fab fa-instagram"></i>
+                <a href="">Instagram Link</a><br />
+                <a href="">Twitter Profile</a><br />
+                <a href="">Bootply Profile</a>
+                <p>SKILLS/Hobbies</p>
+                <a href="">Eating Chips</a><br />
+                <a href="">Photoshop</a><br />
+                <a href="">Fifa</a><br />
+                <a href="">Dancing</a><br />
+                <a href="">Raging</a><br />
+            </div>
+            -->
+        </div>
+        <div class="col-md-6">
+            <div class="tab-content profile-tab" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>Rank:</label>
+                        </div>
+                        <div class="col-md-3">
+                            <p>{{info.rank}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>Role:</label>
+                        </div>
+                        <div class="col-md-3">
+                            <p>{{info.role}}</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Experience</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>Expert</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Hourly Rate</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>10$/hr</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Total Projects</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>230</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>English Level</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>Expert</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Availability</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>6 months</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Your Bio</label><br />
+                            <p>Your detail description</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

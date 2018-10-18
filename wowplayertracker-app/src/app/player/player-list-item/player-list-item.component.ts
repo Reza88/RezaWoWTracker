@@ -1,4 +1,5 @@
 import {Component, OnInit, Input} from '@angular/core'; 
+import { PlayerService } from '../shared/player.service';
 
 
 @Component({
@@ -8,6 +9,12 @@ import {Component, OnInit, Input} from '@angular/core';
 })
 export class PlayerListItemComponent implements OnInit{
     @Input() player:any; 
+    @Input() info:any;
+
+
+    constructor(private playerService:PlayerService){
+        
+    }
 
     classColors:Array<any>=[
         {id:1, color:'#C79C6E'},
@@ -27,12 +34,13 @@ export class PlayerListItemComponent implements OnInit{
 
     mapPlayerToHeaders:Array<any>=[
         {name:'Arikin', image:'mattslogo.png'}, 
-        {name:'Bashlul', image:'mattslogo.png'},
-        {name:'Raisauce', image:'SukhaHeader.png'},
-        {name:'Rezzy', image:'AliHeader.jpg'},
-        {name:'Rayhaan', image:'SukhaHeader.jpg'},
-        {name:'Bobiss', image:'ArikinHeader2.jpg'},
-        {name:'Wercho', image:'ArikinHeader2.jpg'}
+        {name:'Bashlul', image:'Random.png'},
+        {name:'Rukawa', image:'testsmoke.png'},
+        {name:'Raisauce', image:'warlocktest.png'},
+        {name:'Rayhaanqt', image:'undeadmage.png'},
+        {name:'Rezzy', image:'Random.png'},
+        {name:'Wercho', image:'mattslogo.png'}, 
+        {name:'Moneymastery', image:'undeadmage.png'}
     ]
 
 
@@ -80,6 +88,10 @@ export class PlayerListItemComponent implements OnInit{
         {id: 11, name:'Draenei'},
         {id: 22, name:'Worgen'},
         {id: 25, name:'Panda'},
+        {id:27,name:'Nightborne'}
+    ]
+    roles: Array<any>=[
+        {name:'dps', image:'dps.png'},
     ]
 
     ngOnInit(){

@@ -1,6 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'variables'; 
 
-html,body,p{
+html,body{
     color:$main-text-color; 
+    margin:0px; 
+    background-image:
+     linear-gradient(rgba(0, 0, 0, 0.7),
+     rgba(0, 0, 0, 0.7)),
+      url(/assets/images/background/coolbgazeroth.jpg);
+    background-repeat:no-repeat; 
+    background-size:cover; 
+    background-attachment: fixed;
 }
+
+

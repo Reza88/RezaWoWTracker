@@ -8,3 +8,16 @@
     padding-left: 10px;
     padding-right: 10px;
 }
+
+.title-style{
+    text-align: center;     
+    color:green; 
+    background-color:black; 
+    margin-top:100px; 
+}
+
+.my-pagination /deep/ .ngx-pagination{
+    a{
+        color:white; 
+    }
+}

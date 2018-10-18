@@ -11,8 +11,7 @@ import {Component, OnInit} from '@angular/core';
 export class PlayerListComponent implements OnInit{
     
     playerProfiles: PlayerProfile[] = []; 
-
-
+    playerInfo: Player[] = [];
     
     constructor(private playerService:PlayerService){
         
@@ -20,12 +19,14 @@ export class PlayerListComponent implements OnInit{
     
     
     ngOnInit(){
+        
+
         this.playerService.getAllPlayerProfilesStats().subscribe((data)=>{
             this.playerProfiles.push(data); 
             this.playerProfiles.sort((a,b) => a.name.localeCompare(b.name));
         });
-
-
+        console.log(this.playerInfo); 
+        console.log(this.playerProfiles); 
     }
  
     

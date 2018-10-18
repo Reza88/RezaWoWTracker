@@ -1,51 +1,73 @@
-const Player = require('./player'); 
+const Player = require('./player');
 
-class FakeDb{
-    constructor(){
-        this.players=[{
-            name:'Rezzy', 
-            server:'Tichondrius'
+class FakeDb {
+    constructor() {
+        this.players = [{
+            name: 'Rezzy',
+            server: 'Tichondrius',
+            rank:'Officer',
+            role:'DPS'
         },
         {
-            name:'Bashlul', 
-            server:'Tichondrius'
-        }, 
-        {
-            name:'Raisauce', 
-            server:'Tichondrius'
-        }, 
-        {
-            name:'Arikin', 
-            server:'Tichondrius'
+            name: 'Bashlul',
+            server: 'Tichondrius',
+            rank:'Officer',
+            role:'DPS'
         },
         {
-            name:'Rayhaan', 
-            server:'Tichondrius'
+            name: 'Raisauce',
+            server: 'Tichondrius',
+            rank:'Officer',
+            role:'DPS'
         },
         {
-            name:'Bobiss', 
-            server:'Tichondrius'
+            name: 'Arikin',
+            server: 'Tichondrius',
+            rank:'Officer',
+            role:'DPS'
         },
-    {
-        name:'Wercho',
-        server:'Tichondrius'
-    }]; 
+        {
+            name: 'Rayhaanqt',
+            server: 'Tichondrius',
+            rank:'Officer',
+            role:'DPS'
+        },
+        {
+            name: 'Rukawa',
+            server: 'Tichondrius',
+            rank:'Officer',
+            role:'DPS'
+        },
+        {
+            name: 'Wercho',
+            server: 'Tichondrius', 
+            rank:'Officer',
+            role:'DPS'
+        },
+        {
+            name: 'Moneymastery',
+            server: 'Tichondrius', 
+            rank:'Officer',
+            role:'DPS'
+        } 
+        
+       ];
     }
 
-    async cleanDB(){
-        await Player.remove({}); 
+    async cleanDB() {
+        await Player.remove({});
     }
 
-    pushPlayersToDB(){
-        this.players.forEach((player)=>{
-            const newPlayer = new Player(player); 
-            newPlayer.save(); 
-        }); 
+    pushPlayersToDB() {
+        this.players.forEach((player) => {
+            const newPlayer = new Player(player);
+            newPlayer.save();
+        });
     }
 
-    seedDb(){
-        this.cleanDB(); 
-        this.pushPlayersToDB(); 
+    seedDb() {
+        this.cleanDB();
+        this.pushPlayersToDB();
     }
 }
 

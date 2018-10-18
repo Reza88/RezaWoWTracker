@@ -12,7 +12,7 @@ export class PlayerProfile{
     calcClass: string;
     faction: number;
     totalHonorableKills: number
-
+    role:string; 
 
     constructor(obj?:any){
         this.lastModified = obj.lastModified; 
@@ -28,6 +28,7 @@ export class PlayerProfile{
         this.calcClass = obj.calcClass; 
         this.faction = obj.faction; 
         this.totalHonorableKills = obj.totalHonorableKills
+        this.role = obj.role; 
     }
     
 }
